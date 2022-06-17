@@ -10,8 +10,9 @@ const BodyContainer = styled.div`
     display:grid;
     width: 80%;
     text-align : center;
-    grid-template-columns: repeat(6, minmax(1fr, auto));
+    grid-template-columns: repeat(6, 1fr);
     margin: 5px;
+    overflow-x: auto;
 
     .ListNumber{
         grid-column: 1/2;
@@ -30,9 +31,9 @@ const BodyContainer = styled.div`
 function Body() {
     const Array = useSelector((state)=>state)
     const dispatch = useDispatch(); //전역변수의 메소드를 사용하기 위해서 
-    const onClick =(e) =>{
-        const DeleteId = e.target.parentElement.id
-        dispatch({type: "Delete", id: DeleteId})
+    const onClick =(e) =>{ // 클릭 이벤트로 보내지면
+        const DeleteId = e.target.parentElement.id // 현재 부모요소에 지워야할 값이 들어있기 때문에 부모의 id로 들어간다.
+        dispatch({type: "Delete", id: DeleteId}) // 찾은 값을 없애준다.
     }
 
     return (
