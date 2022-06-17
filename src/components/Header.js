@@ -33,7 +33,6 @@ function Header() {
     const dispatch = useDispatch(); //전역변수의 메소드를 사용하기 위해서 
     const onChange = (e)=>{ // 바뀌는 값을 확인하는 이벤트
         setText(e.target.value)
-        console.log(text)
     }
 
     const onsubmit = (e) =>{

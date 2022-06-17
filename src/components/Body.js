@@ -33,7 +33,6 @@ function Body() {
     const onClick =(e) =>{
         const DeleteId = e.target.parentElement.id
         dispatch({type: "Delete", id: DeleteId})
-        console.log(Array)
     }
 
     return (
