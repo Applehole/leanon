@@ -3,24 +3,10 @@ import {createStore} from 'redux'
 const Create ="Create"
 const Delete ="Delete"
 
-export const CreateAction = text =>{
-    return {
-        type:Create,
-        text
-    }
-}
-
-export const deleteAction = id => {
-    return {
-        type:Delete,
-        id
-    }
-}
-
-const reducer = (state = [{text: "기본" , id : Date.now()}], action) => {
+const reducer = (state = [{text: "기본더미 데이터입니다." , id : Date.now()}], action) => {
     switch(action.type){
         case Create:
-            return [{text : action.text, id :Date.now()} , ...state]
+            return [{text : action.text, id :Date.now()} , ...state] //새로운 값을 추가해준다.
         case Delete:
             return state = state.filter(toDo => {
                 // console.log("toDo id",toDo.id)
@@ -33,7 +19,7 @@ const reducer = (state = [{text: "기본" , id : Date.now()}], action) => {
             }
             )
         default:
-            return state
+            return state //기본 값을 정해준다.
     }
 }
 
