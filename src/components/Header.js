@@ -39,6 +39,7 @@ function Header() {
     const onsubmit = (e) =>{
         e.preventDefault();
         dispatch({type: 'Create', text})
+        setText("")
     }
 
     return (
