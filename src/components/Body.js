@@ -39,9 +39,9 @@ function Body() {
     return (
       <BodyContainer>
         <div>
-          {Array.map((el)=>
+          {Array.map((el, idx)=>
           <ul className='todoListUl' id={el.id} key={el.id}>
-           <div className='ListNumber'>번호</div>
+           <div className='ListNumber'>{Array.length-idx}</div>
            <div className='ListText'>{el.text}</div>
            <button className='ListDelete' onClick={onClick}>삭제</button>
           </ul>)}
